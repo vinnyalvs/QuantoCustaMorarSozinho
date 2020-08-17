@@ -215,7 +215,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Custos Fixos (Mensais)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                      <div id="fixCostCard"class="h5 mb-0 font-weight-bold text-gray-800">R$0</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -232,7 +232,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Custos Variáveis (Mensais)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                      <div id="variableCostCard" class="h5 mb-0 font-weight-bold text-gray-800">R$0</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -248,15 +248,10 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Custos Iniciais</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Custo Total (Mensal)</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                          <div id="totalCostCard" class="h5 mb-0 font-weight-bold text-gray-800">R$0</div>
                         </div>
                       </div>
                     </div>
@@ -274,8 +269,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Custo Total (Mensal)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Custo Iniciais da Mudança</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">R$0</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -297,21 +292,21 @@
                       <form class="user">
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" class="form-control form-control-user" id="Aluguel" placeholder="Aluguel">
+                            <input type="number" onchange="saveFixCosts()" class="form-control form-control-user" id="fixCost1" placeholder="Aluguel">
                           </div>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control form-control-user" id="Condomínio" placeholder="Condomínio">
+                            <input type="number" onchange="saveFixCosts()" class="form-control form-control-user" id="fixCost2" placeholder="Condomínio">
                           </div>
                         </div>
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="password" class="form-control form-control-user" id="Seguros" placeholder="Seguros">
+                            <input type="number" onchange="saveFixCosts()" class="form-control form-control-user" id="fixCost3" placeholder="Seguros">
                           </div>
                           <div class="col-sm-6">
-                            <input type="password" class="form-control form-control-user" id="IPTU" placeholder="IPTU">
+                            <input type="number" onchange="saveFixCosts()" class="form-control form-control-user" id="fixCost4" placeholder="IPTU">
                           </div>
                         </div>
-                        <a href="login.html" class="btn btn-primary btn-user btn-block">
+                        <a onclick=saveFixCosts() class="btn btn-primary btn-user btn-block">
                           Salvar
                         </a>
                         <hr>
@@ -327,34 +322,34 @@
                       <form class="user">
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" class="form-control form-control-user" id="Energia" placeholder="Energia">
+                            <input type="number"  onchange="saveVariableCosts()" class="form-control form-control-user" id="variableCost1" placeholder="Energia">
                           </div>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control form-control-user" id="Agua" placeholder="Àgua">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost2" placeholder="Àgua">
                           </div>
                         </div>
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="password" class="form-control form-control-user" id="Alimentacao" placeholder="Supermercado">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost3" placeholder="Supermercado">
                           </div>
                           <div class="col-sm-6">
-                            <input type="password" class="form-control form-control-user" id="Internet" placeholder="Internet">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost4" placeholder="Internet">
                           </div>
                         </div>
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="password" class="form-control form-control-user" id="Transporte" placeholder="Transporte">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost5" placeholder="Transporte">
                           </div>
                           <div class="col-sm-6">
-                            <input type="password" class="form-control form-control-user" id="Outros" placeholder="Outros">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost6" placeholder="Outros">
                           </div>
                         </div>
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="password" class="form-control form-control-user" id="Manutenção" placeholder="Manutenção">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost7" placeholder="Manutenção">
                           </div>
                           <div class="col-sm-6">
-                            <input type="password" class="form-control form-control-user" id="Outros" placeholder="Outros">
+                            <input type="number"  onchange="saveVariableCosts()"  class="form-control form-control-user" id="variableCost8" placeholder="Outros">
                           </div>
                         </div>
                         <a href="login.html" class="btn btn-primary btn-user btn-block">
@@ -507,6 +502,7 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="js/changeCards.js"></script>
 
 </body>
 
