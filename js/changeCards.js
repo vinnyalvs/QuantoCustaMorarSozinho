@@ -17,9 +17,9 @@ function saveTotalCosts () {
 
     var totalCost = 0;
 
-    totalCost = document.getElementById("fixCostCard").innerText.replace('R$','');
+    totalCost = parseInt(document.getElementById("fixCostCard").innerText.replace('R$',''));
 
-    totalCost += document.getElementById("variableCostCard").innerText.replace('R$','');
+    totalCost += parseInt(document.getElementById("variableCostCard").innerText.replace('R$',''));
 
     document.getElementById("totalCostCard").innerText = "R$ " + totalCost;
 
