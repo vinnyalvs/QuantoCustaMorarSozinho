@@ -270,7 +270,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Custo Iniciais da Mudança</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">R$0</div>
+                      <div id= "initialCostCard" class="h5 mb-0 font-weight-bold text-gray-800">R$0</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -368,18 +368,18 @@
                       <form class="user">
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" class="form-control form-control-user" id="Mudanca" placeholder="Mudança">
+                            <input  type="number" onchange="saveInitialCosts()" class="form-control form-control-user" id="initialCost1" placeholder="Mudança">
                           </div>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control form-control-user" id="Sinal" placeholder="Andiantamento do Aluguel">
+                            <input  type="number" onchange="saveInitialCosts()" class="form-control form-control-user" id="initialCost2" placeholder="Andiantamento do Aluguel">
                           </div>
                         </div>
                         <div class="form-group row">
                           <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="password" class="form-control form-control-user" id="reformas" placeholder="Pequenas Reformas">
+                            <input type="number" onchange="saveInitialCosts()" class="form-control form-control-user" id="initialCost3" placeholder="Pequenas Reformas">
                           </div>
                           <div class="col-sm-6">
-                            <input type="password" class="form-control form-control-user" id="Compra de Móveis" placeholder="Compra de Móveis">
+                            <input  type="number" onchange="saveInitialCosts()" class="form-control form-control-user" id="initialCost4" placeholder="Compra de Móveis">
                           </div>
                         </div>
                         <a href="login.html" class="btn btn-primary btn-user btn-block">
