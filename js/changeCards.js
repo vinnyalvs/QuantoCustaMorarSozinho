@@ -28,6 +28,8 @@ function saveTotalCosts () {
 
     document.getElementById("totalCostCard").innerText = "R$ " + parseInt(totalCost);
 
+    updateChart();
+
 }
 
 function saveVariableCosts () {
